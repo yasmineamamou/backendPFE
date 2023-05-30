@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "creation_des_taches",
+  "info": {
+    "singularName": "creation-des-tache",
+    "pluralName": "creation-des-taches",
+    "displayName": "creation-des-taches",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom_tache": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "richtext"
+    },
+    "type_tache": {
+      "type": "enumeration",
+      "enum": [
+        "Journalier",
+        "Hebdomadaire",
+        "Mensuel",
+        "Trimestriel",
+        "Semestriel",
+        "Annuel"
+      ]
+    },
+    "nombre_de_tache": {
+      "type": "integer"
+    },
+    "cout_par_piece": {
+      "type": "float"
+    },
+    "societe": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::societe.societe"
+    },
+    "departement": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::departement.departement"
+    }
+  }
+}
